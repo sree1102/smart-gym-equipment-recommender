@@ -1,8 +1,6 @@
-
 import streamlit as st
 import pandas as pd
 
-# Load the dataset
 equipment_df = pd.read_excel(r"C:\Users\satya\OneDrive\Desktop\gym_equipment_master_dataset.xlsx")
 
 equipment_df.columns = [col.strip().lower().replace(" ", "_").replace("(", "").replace(")", "") for col in equipment_df.columns]
@@ -46,12 +44,10 @@ def recommend_equipment(user_row, equipment_df):
     def is_impact_match(level):
         return str(level).lower() == impact_preference
 
-    # Step 1: Goal Matching
     step1 = equipment_df[equipment_df['target_goals'].apply(is_goal_match)].copy()
     print(f"\nAfter Goal Filter ({len(step1)} items):")  # Fixed missing parenthesis
     print(step1[['equipment_name', 'target_goals']].head())
 
-    # Step 2: Health Conditions
     if 'none' not in [h.lower() for h in health_conditions]:
         step2 = step1[step1['suitable_health_conditions'].apply(is_health_condition_match)].copy()
     else:
@@ -59,17 +55,14 @@ def recommend_equipment(user_row, equipment_df):
     print(f"\nAfter Health Filter ({len(step2)} items):")
     print(step2[['equipment_name', 'suitable_health_conditions']].head())
 
-    # Step 3: Age Group
     step3 = step2[step2['suitable_age_group'].apply(is_age_suitable)].copy()
     print(f"\nAfter Age Filter ({len(step3)} items):")
     print(step3[['equipment_name', 'suitable_age_group']].head())
 
-    # Step 4: Budget
     step4 = step3[step3['price_range_inr'].apply(is_price_in_budget)].copy()
     print(f"\nAfter Budget Filter ({len(step4)} items):")
     print(step4[['equipment_name', 'price_range_inr']].head())
 
-    # Step 5: Impact Level
     step5 = step4[step4['impact_level'].str.lower() == impact_preference].copy()
     print(f"\nAfter Impact Filter ({len(step5)} items):")
     print(step5[['equipment_name', 'impact_level']].head())
