@@ -1,51 +1,70 @@
-# Smart Gym Equipment Recommender
+# Smart-Gym-Equipment-Recommender
 
-A personalized gym equipment recommendation system built using Streamlit, Power BI, Excel, and Python.
+This project is a complete AI-based smart gym equipment recommender that combines:
 
-## Project Description
-This app helps users discover gym equipment that best suits their personal needs based on:
-- Age
-- Gender
-- Fitness goals
-- Health conditions
-- Budget
-- Impact level preference (Low/Medium/High)
+- **Python** – Streamlit Web App  
+- **Excel** – Data Handling  
+- **Power BI** – Interactive Dashboard
 
-The system filters a master dataset and suggests equipment accordingly, offering a customized experience for both beginners and fitness enthusiasts.
+Designed to recommend personalized gym equipment based on user profiles and visualize workout trends across goals, age, gender, budget, and impact.
 
 ---
 
-## Features
-- Interactive web app using **Streamlit**
-- Reads and processes data from **Excel**
-- Recommends equipment using multiple filters (goal, health, age, budget, impact)
-- Visualization dashboard in **Power BI**
+## 📁 Project Files
+
+| File Name                           | Purpose                                                |
+|-------------------------------------|--------------------------------------------------------|
+| `smart_gym_recommender_cleaned.py`  | Streamlit app to generate equipment recommendations    |
+| `gym_equipment_master_dataset.xlsx` | Core equipment data used in the app                    |
+| `gym_equipment_dashboard.pbix`      | Final Power BI Dashboard file                          |
 
 ---
 
-## Tech Stack
-- **Python**: Core logic and filtering
-- **Streamlit**: Frontend web application
-- **Excel**: Data storage and preprocessing
-- **Power BI**: Visual analytics dashboard
+## ⚙️ Streamlit App Features (Python)
+
+- User enters: **Age, Gender, Budget, Health, Goal, Impact level**
+- App includes:
+  - **Goal Target**
+  - **Health Condition Filter**
+  - **Budget Matcher**
+  - **Equipment Recommendation Engine**
+    - Based on matching: Goal, Impact Level, Budget, Age
+- Interactive UI:
+  - Clean Form
+  - Dynamic output section for matched equipment
 
 ---
 
-## Files Included
-- `smart_gym_recommender_cleaned.py`: Main Streamlit app
-- `gym_equipment_master_dataset.xlsx`: Equipment database
-- `requirements.txt`: Python packages
-- `gym equipment recommender.pbix`: Power BI dashboard
+## Power BI Dashboard Highlights
+
+📌 Based on real, clean master dataset with 100+ records
+
+### Key Visuals:
+- User Goal vs Equipment Usage
+- Gender-wise Equipment Demand
+- Age Group Trends for Equipment
+- Equipment Type Popularity
+- Budget-Category Wise Recommendations
+- Health Condition vs Equipment Distribution
+- Smart Filters (Age, Gender, Goal, Impact)
 
 ---
 
-## How to Run the App
+## Tools Used
 
-### 1. Install required packages
-```bash
-pip install -r requirements.txt
+- Python  
+- Streamlit  
+- Pandas  
+- Power BI  
+- CSV / Excel  
 
-### Run the Streamlit app
-```bash
-streamlit run smart_gym_recommender_cleaned.py
+---
+
+## 📸 Dashboard Preview
+
+> ![image](https://github.com/user-attachments/assets/5396eb61-33d1-453d-b64e-a7a0389f3b6a)
+> ![image](https://github.com/user-attachments/assets/c6465bcc-10e1-49ce-8351-3d60b993aed1)
+
+
+---
 
